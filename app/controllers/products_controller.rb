@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
     @products = Product.all
     render :index
   end
-end
 
   def new
     @product = Product.new
@@ -26,6 +25,7 @@ end
 
   def show
     @product = Product.find(params[:id])
+    logger.info @product
     render :show
   end
 
@@ -43,3 +43,4 @@ end
     @product.destroy
     redirect_to products_path
   end
+end

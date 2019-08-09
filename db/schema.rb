@@ -17,9 +17,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_170030) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "string"
-    t.string "cost"
-    t.string "float"
+    t.float "cost"
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,9 +25,8 @@ ActiveRecord::Schema.define(version: 2019_08_09_170030) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "author"
-    t.string "string"
     t.string "content_body"
-    t.string "rating"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "product_id"

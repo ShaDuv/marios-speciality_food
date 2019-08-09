@@ -7,3 +7,16 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Go away!</a>
   </p>
 </div>
+
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no products yet.</p>
+<% end %>
+
+
+<p><%= link_to "Create new product", new_product_path %></p>

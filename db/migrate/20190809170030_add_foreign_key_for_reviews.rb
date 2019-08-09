@@ -1,5 +1,5 @@
 class AddForeignKeyForReviews < ActiveRecord::Migration[5.2]
   def change
-    add_foreign_key :reviews, :products
+    add_reference :reviews, :product, foreign_key: true
   end
 end

@@ -10,7 +10,10 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    name = params[:name]
+    cost = params[:cost]
+    country = params[:country]
+    @product = Product.new(:name => name, :cost => cost, :country => country)
     if @product.save
       redirect_to products_path
     else
@@ -43,4 +46,6 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_path
   end
+
+  
 end

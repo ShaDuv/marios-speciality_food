@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :country, presence: true
 
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
-  
+  scope :usa, -> {where(country: "USA")}
 
     private
       def titleize_product

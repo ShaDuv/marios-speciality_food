@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
     params.permit!
     @products = Product.all
     @top_three = Product.three_most_recent
+    @usa = Product.usa
     render :index
   end
 

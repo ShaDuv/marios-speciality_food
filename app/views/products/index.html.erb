@@ -14,6 +14,18 @@
 <% else %>
   <p>There are no products yet.</p>
 <% end %>
-<h3>Top Three</h3>
-<% if @top_three.any? %>
+<h3> Top 3 </h3>
+
+<ul>
+<% @top_three.each do |p| %>
+  <li> <%= link_to p.name, product_path(p)%> </li>
 <% end %>
+</ul>
+
+<h3> USA Made </h3>
+
+<ul>
+<% @usa.each do |p| %>
+  <li> <%= link_to p.name, product_path(p)%> </li>
+<% end %>
+</ul>

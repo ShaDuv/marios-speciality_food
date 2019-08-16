@@ -1,0 +1,5 @@
+2019-08-09T16:11:35-07:00 | 342c2969210d461880d29140cd18d09c942a783f | adds ability to edit review and adds a few more seeds to the DB
+2019-08-09T16:05:33-07:00 | e6f0c0e7f420a06f09c59f681e368c3f9bae23dd | add the controller for the reviews and the new erb file for reviews
+2019-08-09T15:46:46-07:00 | b0840ad8759acc2a4c96dc4ecb9492b553dfb8ed | add functionality to edit and delete products
+2019-08-09T14:55:20-07:00 | 17f3f92b43a374d46b879faa2ed932ec95670a82 | removed an extra end that was breaking my whole world
+2019-08-09T14:14:36-07:00 | 3ffbdc1634343f0d21f53d686b6cfba48349076e | cause me to bang myhead against the keyboard tying to figure out why products is suddely a nil class

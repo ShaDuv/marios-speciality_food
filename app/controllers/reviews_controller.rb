@@ -29,8 +29,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    params.permit!
     @review = Review.find(params[:id])
-    if @review.update(review_params)
+    if @review.update(params[:review])
       redirect_to product_path(@review.product)
     else
       render :edit

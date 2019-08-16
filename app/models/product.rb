@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
-  before_save {:product_title}
+  before_save(:titleize_product)
 
-  private
-  def product_title
-    self.name = self.name.titleize
+    private
+      def titleize_product
+        self.name = self.name.titleize
+      end
   end
-end

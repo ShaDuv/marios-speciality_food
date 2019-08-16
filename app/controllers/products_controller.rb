@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
     params.permit!
     @product = Product.new(params[:product])
     if @product.save
+      flash[:notice] = "New Product Added!"
       redirect_to products_path
     else
       render :new
@@ -32,7 +33,8 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.update(product_params)
+    params.permit!
+    if @product.update(params[:product])
       redirect_to products_path
     else
       render :edit
@@ -44,6 +46,4 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_path
   end
-
-
 end

@@ -10,10 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    name = params[:name]
-    cost = params[:cost]
-    country = params[:country]
-    @product = Product.new(:name => name, :cost => cost, :country => country)
+    params.permit!
+    @product = Product.new(params[:product])
     if @product.save
       redirect_to products_path
     else
@@ -47,5 +45,5 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-  
+
 end

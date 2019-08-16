@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   def index
+    params.permit!
     @products = Product.all
     render :index
   end
 
   def new
+    params.permit!
     @product = Product.new
     render :new
   end
@@ -21,17 +23,20 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    params.permit!
     @product = Product.find(params[:id])
     render :edit
   end
 
   def show
+    params.permit!
     @product = Product.find(params[:id])
     logger.info @product
     render :show
   end
 
   def update
+    params.permit!
     @product = Product.find(params[:id])
     params.permit!
     if @product.update(params[:product])

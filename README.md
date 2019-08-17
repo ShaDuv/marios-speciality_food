@@ -10,6 +10,7 @@ This repo is currently located at https://github.com/ShaDuv/marios-speciality_fo
 ## Setup/Installation Requirements
 
 * _Clone this repository_
+* _Install database (psql marios_food_development < marios_food_backup.sql)
 * _Open files in text editor of your choice_
 * _Make changes as desired_
 * _Make frequent commits with detailed comments_
